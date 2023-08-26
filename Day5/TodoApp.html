@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catatan</title>
+    <style>
+      .danger {
+        color: rgb(255, 95, 95);
+      }
+
+      .aman {
+        color: rgb(47, 243, 47);
+      }
+    </style>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="box-item">
+        <h1>Catatan Belanja</h1>
+
+        <div>
+          <input
+            type="number"
+            id="input-budget"
+            class="input-item"
+            placeholder="Berapa budget kamu?"
+          />
+          <button id="set-budget" class="btn">Set Budget</button>
+        </div>
+
+        <div class="box-input-barang">
+          <div>
+            <input
+              type="text"
+              id="input-nama"
+              placeholder="nama barang"
+              class="input-item"
+            />
+            <input
+              type=""
+              id="input-harga"
+              placeholder="harga barang"
+              class="input-item"
+            />
+          </div>
+          <div class="btn-item">
+            <button id="tambah-item" class="btn">Barang</button>
+          </div>
+        </div>
+
+        <div>
+          <input
+            type="number"
+            id="input-diskon"
+            placeholder="kamu ada diskon"
+            class="input-item"
+          />
+          <button id="set-diskon" class="btn">diskon</button>
+        </div>
+
+        <h2 id="total-harga-keseluruhan">0</h2>
+
+        <ul id="daftar-item"></ul>
+        <h2 id="total-harga-keseluruhan-setelah-diskon">-</h2>
+      </div>
+    </div>
+
+    <script src="./Todo.js"></script>
+  </body>
+</html>

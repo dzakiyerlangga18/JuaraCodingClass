@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <p>Yanwar</p>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi aliquid,
+      dolor itaque et consectetur atque ut. Saepe, asperiores tempore, adipisci
+      autem totam odio iusto ipsum, quia id animi illo molestiae.
+    </p>
+    <script>
+      let categories = {
+        assassin: "Assassin",
+        legends: "Legends",
+        creep: "Creep",
+      };
+
+      let heroTemplate = () => {
+        return {
+          hp: 100,
+          nama: "",
+          category: "",
+          damageAttack: 0,
+          defence: 0,
+          onAttack: function (enemy) {
+            let defence = enemy.defence - this.damageAttack;
+            if (defence < 0) {
+              enemy.hp = enemy.hp + defence;
+              enemy.defence = 0;
+              console.log(enemy.hp);
+              console.log(enemy.defence);
+            } else {
+              enemy.defence = defence;
+              console.log(enemy.hp);
+              console.log(enemy.defence);
+            }
+            // enemy.hp = enemy.hp - this.damageAttack;
+
+            // if () {
+
+            // }
+            // console.log(this.nama + " attack to " + enemy.nama);
+            // console.log(this.nama + " HP: " + enemy.hp)
+            // return enemy.hp
+          },
+        };
+      };
+
+      let karina = heroTemplate();
+      karina.nama = "Karina";
+      karina.category = categories.assassin;
+      karina.damageAttack = 20;
+      karina.defence = 10;
+
+      let goku = heroTemplate();
+      goku.nama = "Goku";
+      goku.category = categories.legends;
+      goku.damageAttack = 10;
+      goku.defence = 2;
+
+      // karina.onAttack(goku);
+      let arena = [karina, goku];
+
+      let interval = setInterval(function () {
+        let randomPlayer = Math.floor(Math.random() * 10) % 2;
+        let playerAttack = arena[randomPlayer];
+        let enemyIndex = null;
+        if (randomPlayer === 0) {
+          enemyIndex = 1;
+        } else {
+          enemyIndex = 0;
+        }
+        let enemy = arena[enemyIndex];
+
+        playerAttack.onAttack(enemy);
+
+        console.table(arena);
+
+        if (enemy.hp < 0) {
+          clearInterval(interval);
+          let winer = arena[0].nama;
+          console.log(`winer is ${winer}`);
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
