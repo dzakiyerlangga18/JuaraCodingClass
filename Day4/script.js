@@ -1,19 +1,11 @@
 // 1. event listener
 let buttonPenjumlahan = document.querySelector("button");
 
-// addEventListener untuk penjumlahan
-buttonPenjumlahan.addEventListener("click", function () {
-  let inputNumber1 = document.querySelector("#angka1");
-  let inputNumber2 = document.querySelector("#angka2");
 
-  // validasi kalo kosong
-  if (inputNumber1.value && !inputNumber2.value) {
-    alert("input number 1 harus ada.");
     return;
   }
 
-  // untuk mengambil nilai dari objek input, gunakan
-  // properti .value
+
 
   // menampilkan hasil perhitungan ke dalam span
   // 1. kaitkan elemen span ke js
@@ -26,10 +18,7 @@ buttonPenjumlahan.addEventListener("click", function () {
 
 let buttonLuas = document.querySelector("#Luassegitiga");
 
-// add event
-buttonLuas.addEventListener("click", function () {
-  let alas = document.querySelector("#alas");
-  let tinggi = document.querySelector("#tinggi");
+
 
   //   validasi jika losong
   if (!alas.value || !tinggi.value) {
